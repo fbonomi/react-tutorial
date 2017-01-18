@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <BaseLayout title="Home">
+        <BaseLayout title="Home" menuItem="home">
             <p>Sono la pagina home</p>
             <Button label="Ciao sono federico" />
             <Button label="Ciao sono alessandro" />

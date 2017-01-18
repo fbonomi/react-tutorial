@@ -7,10 +7,10 @@ class Base extends Component {
     render() {
         return (
             <div className="foo">
-                <Navigation />
+                <Navigation menuItem={this.props.menuItem} />
                 <div className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <h2>{this.props.title}</h2>
+                    <h2 title={this.props.title}>{this.props.title}</h2>
                 </div>
                 {this.props.children}
             </div>

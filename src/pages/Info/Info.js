@@ -5,7 +5,7 @@ class Info extends Component {
     render() {
         return (
             <div>
-                <BaseLayout title="Info">
+                <BaseLayout title="Info" menuItem="info">
                     <p>Welcome to Info page!!!</p>
                 </BaseLayout>
             </div>
