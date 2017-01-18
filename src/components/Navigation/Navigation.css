@@ -1,6 +1,7 @@
 ul.navigation {
     margin: 0 0 10px 0;
     padding: 0;
+    border: 1px solid orange;
 }
 ul.navigation li {
     display: inline-block;
