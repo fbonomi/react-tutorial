@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import './Base.css';
 import logo from './logo.svg';
 import Navigation from '../../components/Navigation/Navigation';
+
+import './Base.css';
 
 class Base extends Component {
     render() {
         return (
-            <div className="foo">
+            <div>
                 <Navigation menuItem={this.props.menuItem} />
                 <div className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
