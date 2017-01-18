@@ -10,10 +10,14 @@ class Base extends Component {
             <div>
                 <Navigation menuItem={this.props.menuItem} />
                 <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h2 title={this.props.title}>{this.props.title}</h2>
+                    <div className="container">
+                        <img src={logo} className="App-logo" alt="logo" />
+                        <h2 title={this.props.title}>{this.props.title}</h2>
+                    </div>
                 </div>
-                {this.props.children}
+                <div className="container">
+                    {this.props.children}
+                </div>
             </div>
         );
     }
