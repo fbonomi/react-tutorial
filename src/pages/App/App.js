@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Button from '../../components/Button/Button';
 import './App.css';
 import BaseLayout from '../../layouts/Base/Base';
+import Button from 'react-bootstrap/lib/Button';
 
 class App extends Component {
   render() {
@@ -9,8 +9,12 @@ class App extends Component {
       <div>
         <BaseLayout title="Home" menuItem="home">
             <p>Sono la pagina home</p>
-            <Button label="Ciao sono federico" />
-            <Button label="Ciao sono alessandro" />
+            <Button bsStyle="success" bsSize="small">
+                Ciao sono federico
+            </Button>
+            <Button bsStyle="success" bsSize="small">
+                Ciao sono alessandro
+            </Button>
         </BaseLayout>
       </div>
     );

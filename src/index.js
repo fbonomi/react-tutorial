@@ -5,6 +5,7 @@ import App from './pages/App/App';
 import About from './pages/About/About';
 import Info from './pages/Info/Info';
 
+import './index.css';
 
 ReactDOM.render(
     <Router history={hashHistory}>
