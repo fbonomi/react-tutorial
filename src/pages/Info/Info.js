@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-//import Button from './Button';
-//import logo from './logo.svg';
-//import './App.css';
+import Navigation from '../../components/Navigation/Navigation';
 
 class Info extends Component {
     render() {
         return (
-            <div>Welcome to Info page!!!</div>
+            <div>
+                <Navigation />
+                Welcome to Info page!!!
+            </div>
         );
     }
 }
