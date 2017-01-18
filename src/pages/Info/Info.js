@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BaseLayout from '../../layouts/Base/Base';
 import Navigation from '../../components/Navigation/Navigation';
 
 class Info extends Component {
@@ -6,7 +7,9 @@ class Info extends Component {
         return (
             <div>
                 <Navigation />
-                Welcome to Info page!!!
+                <BaseLayout title="Info">
+                    <p>Welcome to Info page!!!</p>
+                </BaseLayout>
             </div>
         );
     }

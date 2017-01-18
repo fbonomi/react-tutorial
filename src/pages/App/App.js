@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../../components/Button/Button';
-import logo from './logo.svg';
 import './App.css';
+import BaseLayout from '../../layouts/Base/Base';
 import Navigation from '../../components/Navigation/Navigation';
 
 class App extends Component {
@@ -9,15 +9,11 @@ class App extends Component {
     return (
       <div>
         <Navigation />
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2 className="foo">Welcome to React!!!</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button label="Ciao sono federico" />
-        <Button label="Ciao sono alessandro" />
+        <BaseLayout title="Home">
+            <p>Sono la pagina home</p>
+            <Button label="Ciao sono federico" />
+            <Button label="Ciao sono alessandro" />
+        </BaseLayout>
       </div>
     );
   }
