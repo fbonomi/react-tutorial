@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap';
+import axios from 'axios';
 
 class UsersList extends Component {
 
@@ -11,24 +12,51 @@ class UsersList extends Component {
         };
     }
 
+    _editHandler() {
+        alert("edit user")
+    }
+
     componentDidMount() {
-        // TODO - sostituire con chiamata ajax
-        var users = [
-            { id: 1, name: 'Federico' }, { id: 2, name: 'Mattia' }, { id: 3, name: 'Alessandro' },
-        ]
-        this.setState({ users })
+        axios.get(`http://www.reddit.com/r/beef.json`)
+            .then(res => {
+                const users = res.data.data.children.map(obj => obj.data).slice(0, 15);
+                console.log(users);
+                this.setState({ users });
+            });
     }
 
     render() {
         return (
             <Panel header="Users List">
-                <ul>
-                    {this.state.users.map(user =>
-                        <li key={user.id}>
-                            (<strong>{user.id}</strong>) {user.name}
-                        </li>
-                    )}
-                </ul>
+                <table className="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Author</th>
+                            <th>Title</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.users.map(user =>
+                            <tr data-id={user.id}>
+                                <td>
+                                    { user.thumbnail != 'self' && user.thumbnail != 'default'
+                                        ? <img src={user.thumbnail} alt="" width="50" />
+                                        : null }
+                                </td>
+                                <td>{user.author}</td>
+                                <td>{user.title}</td>
+                                <td className="text-right">
+                                    <span
+                                        onClick={this._editHandler}
+                                        title="Edit" style={ { cursor: 'pointer' } }
+                                        className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
             </Panel>
         );
     }
