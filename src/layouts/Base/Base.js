@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Navigation from '../../components/Navigation/Navigation';
+import Jumbotron from 'react-bootstrap/lib/Jumbotron';
 
 import './Base.css';
 
@@ -9,12 +10,12 @@ class Base extends Component {
         return (
             <div>
                 <Navigation menuItem={this.props.menuItem} />
-                <div className="App-header">
+                <Jumbotron>
                     <div className="container">
                         <img src={logo} className="App-logo" alt="logo" />
-                        <h2 title={this.props.title}>{this.props.title}</h2>
+                        <h1 title={this.props.title}>{this.props.title}</h1>
                     </div>
-                </div>
+                </Jumbotron>
                 <div className="container">
                     {this.props.children}
                 </div>
