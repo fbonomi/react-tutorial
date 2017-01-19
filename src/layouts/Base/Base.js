@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Jumbotron } from 'react-bootstrap';
 import logo from './logo.svg';
 import Navigation from '../../components/Navigation/Navigation';
-import Jumbotron from 'react-bootstrap/lib/Jumbotron';
 
 import './Base.css';
 

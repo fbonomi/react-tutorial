@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
+import { Row, Col, Button } from 'react-bootstrap';
 import './Home.css';
 import BaseLayout from '../../layouts/Base/Base';
 
 import Recent from './Recent/Recent';
 import Active from './Active/Active';
 import TrancheDetail from './TrancheDetail/TrancheDetail';
-
-import Row from 'react-bootstrap/lib/Row'; 
-import Col from 'react-bootstrap/lib/Col';
-import Button from 'react-bootstrap/lib/Button';
 
 class App extends Component {
 

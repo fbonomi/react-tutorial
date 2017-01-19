@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Panel from 'react-bootstrap/lib/Panel';
-import Button from 'react-bootstrap/lib/Button';
+import { Panel, Button } from 'react-bootstrap';
 
 class Recent extends Component {
 

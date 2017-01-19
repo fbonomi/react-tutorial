@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import './Navigation.css';
-
-import Navbar from 'react-bootstrap/lib/Navbar';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
-import MenuItem from 'react-bootstrap/lib/MenuItem';
 
 // <Link to="/about"></Link>
 
