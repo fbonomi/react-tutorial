@@ -7,7 +7,7 @@ import Recent from './Recent/Recent';
 import Active from './Active/Active';
 import TrancheDetail from './TrancheDetail/TrancheDetail';
 
-class App extends Component {
+class Home extends Component {
 
     constructor(props) {
         super(props);
@@ -29,7 +29,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className="foooooo">
+            <div>
                 <BaseLayout title="Home" menuItem="home">
                     <Row>
                         <Col xs={9}>
@@ -58,4 +58,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default Home;

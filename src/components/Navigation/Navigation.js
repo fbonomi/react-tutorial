@@ -23,6 +23,9 @@ class Navigation extends Component {
                     <NavItem eventKey={3} href="/#/info" className={this.props.menuItem === 'info' ? 'active' : ''}>
                         Info
                     </NavItem>
+                    <NavItem eventKey={3} href="/#/users" className={this.props.menuItem === 'users' ? 'active' : ''}>
+                        Users
+                    </NavItem>
                 </Nav>
             </Navbar>
         );
