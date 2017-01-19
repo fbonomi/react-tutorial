@@ -1,16 +1,3 @@
-ul.navigation {
-    margin: 0 0 10px 0;
-    padding: 0;
-}
-ul.navigation li {
-    display: inline-block;
-    margin: 0 10px 0 0;
-    left: 0;
-}
-ul.navigation li a {
-    text-decoration: none;
-    color: #000;
-}
-ul.navigation li a.selected {
-    color: blue;
+.navbar {
+    margin-bottom: 0 !important;
 }

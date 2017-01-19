@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router'
-import App from './pages/App/Home';
+import App from './pages/Home/Home';
 import About from './pages/About/About';
 import Info from './pages/Info/Info';
 
