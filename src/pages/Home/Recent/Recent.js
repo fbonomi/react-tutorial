@@ -5,28 +5,25 @@ class Recent extends Component {
 
     constructor(props) {
         super(props);
-        /*this.state = {
-            name: 'Federico',
-            count: 1,
-        };*/
+        this.state = {
+            buttonState: 'default',
+        };
 
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
-        /*this.setState(prevState => ({
-            //name: prevState.name + 'AAAA',
-            count: (prevState.count + 1),
-        }));*/
-        alert("sono il bottone di recent");
+        this.setState(prevState => ({
+            buttonState: (prevState.buttonState == 'default' ? 'success' : 'default'),            
+        }));
     }
 
     render() {
         return (
             <Panel header="Recent">
                 <p>sono il contenuto di recent</p>
-                <Button bsStyle="default" bsSize="small" onClick={this.handleClick}>
+                <Button bsStyle={this.state.buttonState} bsSize="small" onClick={this.handleClick}>
                     Ciao sono recent
                 </Button>
             </Panel>

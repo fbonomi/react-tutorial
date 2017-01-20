@@ -27,6 +27,10 @@ class Home extends Component {
         }));
     }
 
+    componentDidMount() {
+        this.refs.recent.handleClick();
+    }
+
     render() {
         return (
             <div>
@@ -44,7 +48,7 @@ class Home extends Component {
                     <hr />
                     <Row style={ { 'margin-top': '15px' } }>
                         <Col xs={6}>
-                            <Recent />
+                            <Recent ref="recent" />
                         </Col>
                         <Col xs={6}>
                             <Active />
