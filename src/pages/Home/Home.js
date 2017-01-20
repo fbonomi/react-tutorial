@@ -14,6 +14,8 @@ class Home extends Component {
         this.state = {
             name: 'Federico',
             count: 1,
+            propA: 'propA',
+            todos: [],
         };
 
         // This binding is necessary to make `this` work in the callback
@@ -27,12 +29,25 @@ class Home extends Component {
         }));
     }
 
-    componentDidMount() {
-        this.refs.recent.handleClick();
-    }
-
     handleChildFunc() {
         alert("il child mi ha triggato");
+    }
+
+    siblingAddTodoFunc() {
+        this.setState(prevState => ({
+            todos: prevState.todos.concat({ 
+                id: (prevState.todos.length + 1), 
+                name: 'Prova' 
+            }),
+        }));
+    }
+
+    removeTodo() {
+        this.setState(prevState => {
+            return {
+                todos: prevState.todos.slice(0, prevState.todos.length - 1),
+            }
+        });
     }
 
     render() {
@@ -52,10 +67,10 @@ class Home extends Component {
                     <hr />
                     <Row style={ { 'margin-top': '15px' } }>
                         <Col xs={6}>
-                            <Recent ref="recent" myFunc={this.handleChildFunc.bind(this)} />
+                            <Recent count={this.state.todos.length} addTodoFunc={this.siblingAddTodoFunc.bind(this)} />
                         </Col>
                         <Col xs={6}>
-                            <Active />
+                            <Active todos={this.state.todos} removeTodo={this.removeTodo.bind(this)}/>
                         </Col>
                     </Row>
                     <TrancheDetail />

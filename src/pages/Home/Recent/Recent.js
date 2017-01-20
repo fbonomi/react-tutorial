@@ -19,16 +19,16 @@ class Recent extends Component {
         }));        
     }
 
-    handleTriggerParent() {
-        this.props.myFunc();
-    }
-
     render() {
         return (
             <Panel header="Recent">
                 <p>sono il contenuto di recent</p>
-                <Button bsStyle={this.state.buttonState} bsSize="small" onClick={(e) => { this.handleClick(); this.handleTriggerParent(); }}>
+                <Button bsStyle={this.state.buttonState} bsSize="small" onClick={this.handleClick}>
                     Ciao sono recent
+                </Button>
+                <hr />
+                <Button bsStyle='default' onClick={this.props.addTodoFunc}>
+                    Add todo ({this.props.count})
                 </Button>
             </Panel>
         );

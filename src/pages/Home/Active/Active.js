@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
-import { Panel } from 'react-bootstrap';
+import { Panel, Button } from 'react-bootstrap';
 
 class Active extends Component {
-
-    /*constructor(props) {
-        super(props);
-        this.state = {
-            name: 'Federico',
-            count: 1,
-        };
-
-        // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-        this.setState(prevState => ({
-            //name: prevState.name + 'AAAA',
-            count: (prevState.count + 1),
-        }));
-    }*/
 
     render() {
         return (
             <Panel header="Active">
-                sono il contenuto di panel active
+                TODO [{this.props.todos.length}]
+                <div className="pull-right">
+                    <span onClick={this.props.removeTodo} style={ { cursor: 'pointer' } }>
+                        &times; Remove last
+                    </span>
+                </div>
+                <hr />
+                <ul>
+                    {this.props.todos.map(todo => {
+                        return (
+                            <li>
+                                <strong>{todo.id}</strong>
+                                {' '}
+                                {todo.name}
+                                {'   '}                                
+                            </li>
+                        )
+                    })}
+                </ul>
             </Panel>
         );
     }
