@@ -31,6 +31,10 @@ class Home extends Component {
         this.refs.recent.handleClick();
     }
 
+    handleChildFunc() {
+        alert("il child mi ha triggato");
+    }
+
     render() {
         return (
             <div>
@@ -48,7 +52,7 @@ class Home extends Component {
                     <hr />
                     <Row style={ { 'margin-top': '15px' } }>
                         <Col xs={6}>
-                            <Recent ref="recent" />
+                            <Recent ref="recent" myFunc={this.handleChildFunc.bind(this)} />
                         </Col>
                         <Col xs={6}>
                             <Active />

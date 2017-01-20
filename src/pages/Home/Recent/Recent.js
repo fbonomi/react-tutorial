@@ -15,15 +15,19 @@ class Recent extends Component {
 
     handleClick() {
         this.setState(prevState => ({
-            buttonState: (prevState.buttonState == 'default' ? 'success' : 'default'),            
-        }));
+            buttonState: (prevState.buttonState === 'default' ? 'success' : 'default'),            
+        }));        
+    }
+
+    handleTriggerParent() {
+        this.props.myFunc();
     }
 
     render() {
         return (
             <Panel header="Recent">
                 <p>sono il contenuto di recent</p>
-                <Button bsStyle={this.state.buttonState} bsSize="small" onClick={this.handleClick}>
+                <Button bsStyle={this.state.buttonState} bsSize="small" onClick={(e) => { this.handleClick(); this.handleTriggerParent(); }}>
                     Ciao sono recent
                 </Button>
             </Panel>
