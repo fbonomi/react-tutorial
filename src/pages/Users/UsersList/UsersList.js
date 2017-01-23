@@ -41,7 +41,7 @@ class UsersList extends Component {
                         {this.state.users.map(user =>
                             <tr data-id={user.id}>
                                 <td>
-                                    { user.thumbnail != 'self' && user.thumbnail != 'default'
+                                    { user.thumbnail !== 'self' && user.thumbnail !== 'default'
                                         ? <img src={user.thumbnail} alt="" width="50" />
                                         : null }
                                 </td>

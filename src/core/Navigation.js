@@ -28,7 +28,7 @@ const _parseException = (response) => {
 				var error_message = response.error_message + (response.error_message_detail ? '<hr /><small>' + response.error_message_detail + '</small>' : '');
 				//var Mixins = require('wp_mixins.js');
 				//Mixins.openDialogMessage('Error', error_message);
-				//alert(error_message);
+				alert(error_message);
 
 				/*if (!_.isUndefined(callBackFunction) && _.isFunction(callBackFunction)) {
 					try {
@@ -41,8 +41,8 @@ const _parseException = (response) => {
 			break;
 		case 'E':
 			//sk_log_error('Error on Invoke remote app service : ' + dstUrl, true, response);
-			if (response.error_class == 'HostResponseException' && response.error_field != '') {
-				var text = (response.error_message + ' (' + response.error_code + ') ').replace('{0}', response.error_field);
+			if (response.error_class === 'HostResponseException' && response.error_field !== '') {
+				//var text = (response.error_message + ' (' + response.error_code + ') ').replace('{0}', response.error_field);
 				//sk_log_debug('Successfully Invoke remote app : ' + dstUrl, true);
 				/*if (!_.isUndefined(callBackFunction) && _.isFunction(callBackFunction)) {
 					try {
@@ -52,7 +52,7 @@ const _parseException = (response) => {
 					}
 				}*/
 			} else {
-				var text = response.error_message + ' (' + response.error_code + ')';
+				//var text = response.error_message + ' (' + response.error_code + ')';
 			}
 			//if (!container || container.showMessagesError()) {
 				//alert(text);
@@ -106,16 +106,13 @@ const _parseException = (response) => {
 			}
 			break;
 		}*/
+		default:
+			break;
 	}
 }
 
 const _invoke = (action, code, pcId, data, callback) => {
 	var url = '/ob20SI/' + action + '?fnzCod=OBF' + code + '&pcIds=' + pcId;
-	
-	var params = "fldJsn=" + encodeURIComponent(JSON.stringify({
-		output_params: data,
-		output_params_pcid: {},
-	}));
 
 	/*var params = "headers=" + encodeURIComponent(JSON.stringify({
 		"Cookie": "JSESSIONID=329FE6FAB8EDF7463F3D98D1DA5C43B7",		
