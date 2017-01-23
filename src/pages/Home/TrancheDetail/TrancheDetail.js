@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap';
+import _ from 'underscore';
 
 class TrancheDetail extends Component {
 
@@ -22,10 +23,15 @@ class TrancheDetail extends Component {
     }
 
     render() {
+        const tranche = this.props.tranche;
         return (
-            <Panel header="Tranche detail">
-                Sono tranche detail
-            </Panel>
+            <div>
+                {! _.isEmpty(tranche) &&
+                    <Panel header={'Tranche detail: ' + tranche.trancheName}>
+                        Sono tranche detail
+                    </Panel>
+                }
+            </div>
         );
     }
 

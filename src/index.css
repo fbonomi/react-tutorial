@@ -1,3 +1,7 @@
 .form-horizontal .control-label {
     text-align: left !important;
 }
+
+table.table tr.selected td {
+    background-color: orange !important;
+}

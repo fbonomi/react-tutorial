@@ -39,7 +39,11 @@ class Recent extends List {
                     <tbody>
                         {this.state.list.map((item, index) => {
                             return (
-                                <tr key={index}>
+                                <tr key={index}
+                                    data-trancheID={item.trancheID}
+                                    className={this.props.tranche.trancheID === item.trancheID ? 'selected' : ''}
+                                    onClick={this.props.setDeal.bind(this, item)}
+                                >
                                     <td>{item.trancheName}</td>
                                     <td>{item.offerTypeDescription}</td>
                                     <td>{item.statusName}</td>

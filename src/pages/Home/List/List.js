@@ -41,6 +41,7 @@ class List extends Component {
                 filter: offerType,
                 list: response.dBDealTrancheList,
             }));
+            this.props.setDeal({}, this);
         });
     }
 
