@@ -1,34 +1,89 @@
 import React, { Component } from 'react';
 import { Panel, Button } from 'react-bootstrap';
+import Navigation from '../../../core/Navigation';
 
 class Recent extends Component {
 
     constructor(props) {
         super(props);
-        /*this.state = {
-            name: 'Federico',
-            count: 1,
-        };*/
+        this.state = {
+            options: [],
+            filter: '',
+            list: [],
+        };
 
-        // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
+        this._changeOption = this._changeOption.bind(this);
     }
 
-    handleClick() {
-        /*this.setState(prevState => ({
-            //name: prevState.name + 'AAAA',
-            count: (prevState.count + 1),
-        }));*/
-        alert("sono il bottone di recent");
+    _getList(data, callback) {
+        Navigation.invoke('drlst', '1', data, callback);
+    }
+
+    componentDidMount() {
+        // Recupero la lista per il dominio
+        Navigation.invoke('drlst', '3', {}, (response) => {
+            this.setState(prevState => ({
+                options: [{ fieldValue: '', fieldName: 'All' }].concat(response.domainValueList),
+            }));
+        });
+
+        // Invoco la lista
+        this._getList({}, (response) => {
+            this.setState(prevState => ({
+                list: response.dBDealTrancheList,
+            }));
+        });
+    }
+
+    _changeOption(event) {
+        let offerType = event.target.value;
+        this._getList({ offerType: offerType }, (response) => {
+            this.setState(prevState => ({
+                filter: offerType,
+                list: response.dBDealTrancheList,
+            }));
+        });
     }
 
     render() {
         return (
             <Panel header="Recent">
-                <p>sono il contenuto di recent</p>
-                <Button bsStyle="default" bsSize="small" onClick={this.handleClick}>
-                    Ciao sono recent
-                </Button>
+                <div className="pull-right form-group">
+                    <select onChange={this._changeOption}>
+                        {this.state.options.map((item, index) => {
+                            return (
+                                <option key={index}
+                                        value={item.fieldValue}
+                                        selected={item.fieldValue == this.state.filter ? 'selected' : ''}
+                                        >
+                                    {item.fieldName}
+                                </option>
+                            )
+                        })}
+                    </select>
+                </div>
+                <table className="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Tranche Name</th>
+                            <th>Offer type</th>
+                            <th>Status</th>
+                            <th>TMS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.list.map((item, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{item.trancheName}</td>
+                                    <td>{item.offerTypeDescription}</td>
+                                    <td>{item.statusName}</td>
+                                    <td>{item.statusTMS}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
             </Panel>
         );
     }

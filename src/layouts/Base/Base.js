@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Jumbotron } from 'react-bootstrap';
 import logo from './logo.svg';
-import Navigation from '../../components/Navigation/Navigation';
+import Navbar from '../../components/Navbar/Navbar';
 
 import './Base.css';
 
@@ -9,7 +9,7 @@ class Base extends Component {
     render() {
         return (
             <div>
-                <Navigation menuItem={this.props.menuItem} />
+                <Navbar menuItem={this.props.menuItem} />
                 <Jumbotron>
                     <div className="container">
                         <img src={logo} className="App-logo" alt="logo" />
