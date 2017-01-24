@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap';
 import List from '../List/List';
 import PanelActions from '../../../components/PanelActions/PanelActions';
@@ -7,6 +7,7 @@ class Recent extends List {
 
     constructor(props) {
         super(props);
+        this.type = 'Recent';
         this.pcId = 1;
     }
 
@@ -15,7 +16,7 @@ class Recent extends List {
             <Panel header="Recent">
                 <PanelActions>
                     <select className="form-control" onChange={this._changeOption}>
-                        {this.state.options.map((item, index) => {
+                        {/*this.state.options.map((item, index) => {
                             return (
                                 <option key={index}
                                         value={item.fieldValue}
@@ -24,7 +25,7 @@ class Recent extends List {
                                     {item.fieldName}
                                 </option>
                             )
-                        })}
+                        })*/}
                     </select>
                 </PanelActions>
                 <table className="table table-bordered">
@@ -37,12 +38,12 @@ class Recent extends List {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.list.map((item, index) => {
+                        {this.props.recent.map((item, index) => {
                             return (
                                 <tr key={index}
                                     data-trancheID={item.trancheID}
                                     className={this.props.tranche.trancheID === item.trancheID ? 'selected' : ''}
-                                    onClick={this.props.setDeal.bind(this, item)}
+                                    onClick={this.clickRecord.bind(this, item)}
                                 >
                                     <td>{item.trancheName}</td>
                                     <td>{item.offerTypeDescription}</td>

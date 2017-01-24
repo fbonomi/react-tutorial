@@ -1,26 +1,58 @@
+/*
+ Import Dependencies
+ */
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router'
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { Router, Route, IndexRoute } from 'react-router'
+import 'babel-polyfill';
 
+/*
+ Import Components
+ */
+import App from './components/App';
+import Single from './components/Single';
+import PhotoGrid from './components/PhotoGrid';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Info from './pages/Info/Info';
 import Users from './pages/Users/Users';
 
+/* Import CSS */
 import 'bootstrap/dist/css/bootstrap.css';
-import './index.css';
+import './styles/index.css';
+import css from  './styles/style.css';
 
-import Navigation from './core/Navigation';
+/* Import our data store */
+import store, { history } from './store';
 
-// Simulo la login
-Navigation.login('urlgi', 1, { userLogin: 'User42', password: 'a', termID: '' }, () => {
-	ReactDOM.render(
-	    <Router history={hashHistory}>
-	        <Route path="/" component={Home}/>
-	        <Route path="/about" component={About}/>
-	        <Route path="/info" component={Info}/>
-	        <Route path="/users" component={Users}/>
-	    </Router>,
-	  document.getElementById('root')
-	);
-});
+/*
+ Error Logging
+ */
+
+// import Raven from 'raven-js';
+// import { sentry_url } from './data/config';
+// if(window) {
+//   Raven.config(sentry_url).install();
+// }
+
+/*
+ Rendering
+ This is where we hook up the Store with our actual component and the router
+ */
+render(
+	<Provider store={store}>
+        { /* Tell the Router to use our enhanced history */ }
+		<Router history={history}>
+			<Route path="/" component={App}>
+				<IndexRoute component={Home} />
+				<Route path="/about" component={About}></Route>
+				<Route path="/info" component={Info}></Route>
+				<Route path="/users" component={Users}></Route>
+				<Route path="/photo_grid" component={PhotoGrid}></Route>
+				<Route path="/view/:postId" component={Single}></Route>
+			</Route>
+		</Router>
+	</Provider>,
+    document.getElementById('root')
+);

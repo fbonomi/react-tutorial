@@ -27,6 +27,9 @@ class Navigation extends Component {
                     <li role="presentation" className={this.props.menuItem === 'users' ? 'active' : ''}>
                         <Link to={'users'}>Users</Link>
                     </li>
+                    <li role="presentation" className={this.props.menuItem === 'photo_grid' ? 'active' : ''}>
+                        <Link to={'photo_grid'}>Photo grid</Link>
+                    </li>
                 </Nav>
             </Navbar>
         );

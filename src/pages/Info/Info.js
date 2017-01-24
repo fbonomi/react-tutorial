@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import BaseLayout from '../../layouts/Base/Base';
+import HeaderTitle from '../../components/HeaderTitle/HeaderTitle';
 
 class Info extends Component {
     render() {
         return (
             <div>
-                <BaseLayout title="Info" menuItem="info">
+                <HeaderTitle title="Info" menuItem="info" />
+                <div className="container">
                     <p>Welcome to Info page!!!</p>
-                </BaseLayout>
+                </div>
             </div>
         );
     }

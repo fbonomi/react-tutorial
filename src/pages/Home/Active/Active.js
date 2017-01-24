@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap';
 import List from '../List/List';
 import PanelActions from '../../../components/PanelActions/PanelActions';
@@ -7,24 +7,25 @@ class Active extends List {
 
     constructor(props) {
         super(props);
+        this.type = 'Active';
         this.pcId = 2;
     }
 
     render() {
         return (
-            <Panel header="Active">
+            <Panel header="Recent">
                 <PanelActions>
                     <select className="form-control" onChange={this._changeOption}>
-                        {this.state.options.map((item, index) => {
-                            return (
-                                <option key={index}
-                                        value={item.fieldValue}
-                                        selected={item.fieldValue === this.state.filter ? 'selected' : ''}
-                                >
-                                    {item.fieldName}
-                                </option>
-                            )
-                        })}
+                        {/*this.state.options.map((item, index) => {
+                         return (
+                         <option key={index}
+                         value={item.fieldValue}
+                         selected={item.fieldValue === this.state.filter ? 'selected' : ''}
+                         >
+                         {item.fieldName}
+                         </option>
+                         )
+                         })*/}
                     </select>
                 </PanelActions>
                 <table className="table table-bordered">
@@ -37,12 +38,12 @@ class Active extends List {
                     </tr>
                     </thead>
                     <tbody>
-                    {this.state.list.map((item, index) => {
+                    {this.props.active.map((item, index) => {
                         return (
                             <tr key={index}
                                 data-trancheID={item.trancheID}
                                 className={this.props.tranche.trancheID === item.trancheID ? 'selected' : ''}
-                                onClick={this.props.setDeal.bind(this, item)}
+                                onClick={this.clickRecord.bind(item)}
                             >
                                 <td>{item.trancheName}</td>
                                 <td>{item.offerTypeDescription}</td>
@@ -60,3 +61,4 @@ class Active extends List {
 }
 
 export default Active;
+

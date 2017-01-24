@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BaseLayout from '../../layouts/Base/Base';
+import HeaderTitle from '../../components/HeaderTitle/HeaderTitle';
 
 import UsersFilter from './UsersFilter/UsersFilter';
 import UsersForm from './UsersForm/UsersForm';
@@ -9,11 +9,12 @@ class Users extends Component {
     render() {
         return (
             <div>
-                <BaseLayout title="Users" menuItem="users">
+                <HeaderTitle title="Users" menuItem="users" />
+                <div className="container">
                     <UsersFilter />
                     <UsersForm />
                     <UsersList />
-                </BaseLayout>
+                </div>
             </div>
         );
     }
