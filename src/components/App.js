@@ -1,6 +1,11 @@
 import { bindActionCreators } from 'redux';
+import _ from 'underscore';
 import { connect } from 'react-redux';
+
 import * as actionCreators from '../actions/actionCreators';
+import * as actionRecent from '../actions/recent';
+import * as actionActive from '../actions/active';
+import * as actionTranche from '../actions/tranche';
 
 /*
  Components
@@ -41,8 +46,11 @@ function mapStateToProps(state) {
  and make the actions available via props
  */
 
-export function mapDispatchToProps(dispatch) {
-    return bindActionCreators(actionCreators, dispatch);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(
+        _.extend(actionCreators, actionRecent, actionActive, actionTranche),
+        dispatch
+    );
 }
 
 

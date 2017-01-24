@@ -1,4 +1,4 @@
-import { REQUEST_RECENT, RECEIVE_RECENT } from '../actions/actionCreators';
+import { REQUEST_RECENT, RECEIVE_RECENT } from '../actions/recent';
 
 function recent(state = [], action) {
     switch (action.type) {

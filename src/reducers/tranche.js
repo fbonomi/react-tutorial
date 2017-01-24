@@ -1,5 +1,5 @@
 import _ from 'underscore';
-import { SELECT_TRANCHE } from '../actions/actionCreators';
+import { SELECT_TRANCHE } from '../actions/tranche';
 
 function tranche(state = [], action) {
     switch (action.type) {

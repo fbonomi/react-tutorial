@@ -1,5 +1,3 @@
-import Navigation from '../core/Navigation';
-
 /**
  Action Creators
  These fire events which the reducer will handle
@@ -35,54 +33,5 @@ export function removeComment(postId, i){
         type: 'REMOVE_COMMENT',
         i,
         postId
-    };
-}
-
-/*
- Recent
- */
-
-export const REQUEST_RECENT = 'REQUEST_RECENT';
-export function requestRecent(){
-    return {
-        type: REQUEST_RECENT,
-    };
-}
-
-export const RECEIVE_RECENT = 'RECEIVE_RECENT';
-export function receiveRecent(list){
-    return {
-        type: RECEIVE_RECENT,
-        list
-    };
-}
-
-/*
- Active
- */
-
-export const REQUEST_ACTIVE = 'REQUEST_ACTIVE';
-export function requestActive(){
-    return {
-        type: REQUEST_ACTIVE,
-    };
-}
-
-export const RECEIVE_ACTIVE = 'RECEIVE_ACTIVE';
-export function receiveActive(list){
-    return {
-        type: RECEIVE_ACTIVE,
-        list
-    };
-}
-
-/*
- Tranche
- */
-export const SELECT_TRANCHE = 'SELECT_TRANCHE';
-export function selectTranche(item){
-    return {
-        type: SELECT_TRANCHE,
-        item
     };
 }
