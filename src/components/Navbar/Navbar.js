@@ -31,6 +31,15 @@ class Navigation extends Component {
                         <Link to={'photo_grid'}>Photo grid</Link>
                     </li>
                 </Nav>
+                <Nav pullRight>
+                    <li role="presentation">
+                        <Link to={'/auth/login'}>
+                            <span className="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                            {'  '}
+                            Logout
+                        </Link>
+                    </li>
+                </Nav>
             </Navbar>
         );
     }

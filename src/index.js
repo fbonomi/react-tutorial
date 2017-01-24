@@ -18,6 +18,9 @@ import About from './pages/About/About';
 import Info from './pages/Info/Info';
 import Users from './pages/Users/Users';
 
+import Auth from './components/Auth';
+import Login from './components/Login';
+
 /* Import CSS */
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/index.css';
@@ -51,6 +54,9 @@ render(
 				<Route path="/users" component={Users}></Route>
 				<Route path="/photo_grid" component={PhotoGrid}></Route>
 				<Route path="/view/:postId" component={Single}></Route>
+			</Route>
+			<Route path="/auth" component={Auth}>
+				<Route path="login" component={Login}></Route>
 			</Route>
 		</Router>
 	</Provider>,
