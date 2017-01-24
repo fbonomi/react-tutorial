@@ -43,7 +43,7 @@ class Active extends List {
                             <tr key={index}
                                 data-trancheID={item.trancheID}
                                 className={this.props.tranche.trancheID === item.trancheID ? 'selected' : ''}
-                                onClick={this.clickRecord.bind(item)}
+                                onClick={this.clickRecord.bind(this, item)}
                             >
                                 <td>{item.trancheName}</td>
                                 <td>{item.offerTypeDescription}</td>
