@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import HeaderTitle from '../../components/HeaderTitle/HeaderTitle';
 
 import UsersFilter from './UsersFilter/UsersFilter';
 import UsersForm from './UsersForm/UsersForm';

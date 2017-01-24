@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
-
 import Navbar from './Navbar/Navbar';
 import HeaderTitle from './HeaderTitle/HeaderTitle';
 

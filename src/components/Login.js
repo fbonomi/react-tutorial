@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+import { Button, FormGroup, FormControl } from 'react-bootstrap';
 
 const Login = React.createClass({
 

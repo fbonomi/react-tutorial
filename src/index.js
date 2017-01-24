@@ -24,7 +24,7 @@ import Login from './components/Login';
 /* Import CSS */
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/index.css';
-import css from  './styles/style.css';
+import './styles/style.css';
 
 /* Import our data store */
 import store, { history } from './store';

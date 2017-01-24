@@ -2,8 +2,6 @@ import React from 'react';
 import Photo from './Photo';
 import Comments from './Comments';
 
-import HeaderTitle from './HeaderTitle/HeaderTitle';
-
 const Single = React.createClass({
 
     componentDidMount() {
