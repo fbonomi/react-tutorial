@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import _ from 'underscore';
 import './Home.css';
 import BaseLayout from '../../layouts/Base/Base';
@@ -21,6 +21,27 @@ class Home extends Component {
         this.setState(prevState => ({
             tranche: (! _.isEqual(prevState.tranche, item) ? item : {}),
         }));
+    }
+
+    handleChildFunc() {
+        alert("il child mi ha triggato");
+    }
+
+    siblingAddTodoFunc() {
+        this.setState(prevState => ({
+            todos: prevState.todos.concat({ 
+                id: (prevState.todos.length + 1), 
+                name: 'Prova' 
+            }),
+        }));
+    }
+
+    removeTodo() {
+        this.setState(prevState => {
+            return {
+                todos: prevState.todos.slice(0, prevState.todos.length - 1),
+            }
+        });
     }
 
     render() {

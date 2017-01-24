@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import './Navbar.css';
+import { Link } from 'react-router';
 
 // <Link to="/about"></Link>
 
@@ -9,23 +10,23 @@ class Navigation extends Component {
         return (
             <Navbar>
                 <Navbar.Header>
-                    <Navbar.Brand>
-                        <a href="/#/">Test React App</a>
+                    <Navbar.Brand>                        
+                        <Link to={'/'}>Test React App</Link>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
-                    <NavItem eventKey={1} href="/#/" className={this.props.menuItem === 'home' ? 'active' : ''}>
-                        Home
-                    </NavItem>
-                    <NavItem eventKey={2} href="/#/about" className={this.props.menuItem === 'about' ? 'active' : ''}>
-                        About
-                    </NavItem>
-                    <NavItem eventKey={3} href="/#/info" className={this.props.menuItem === 'info' ? 'active' : ''}>
-                        Info
-                    </NavItem>
-                    <NavItem eventKey={3} href="/#/users" className={this.props.menuItem === 'users' ? 'active' : ''}>
-                        Users
-                    </NavItem>
+                    <li role="presentation" className={this.props.menuItem === 'home' ? 'active' : ''}>
+                        <Link to={'/'}>Home</Link>
+                    </li>
+                    <li role="presentation" className={this.props.menuItem === 'about' ? 'active' : ''}>
+                        <Link to={'about'}>About</Link>
+                    </li>
+                    <li role="presentation" className={this.props.menuItem === 'info' ? 'active' : ''}>
+                        <Link to={'info'}>Info</Link>
+                    </li>
+                    <li role="presentation" className={this.props.menuItem === 'users' ? 'active' : ''}>
+                        <Link to={'users'}>Users</Link>
+                    </li>
                 </Nav>
             </Navbar>
         );
