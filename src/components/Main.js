@@ -12,7 +12,7 @@ const Main = React.createClass({
         // <div className="well">{JSON.stringify(this.props.tranche)}</div>
         return (
             <div>
-                <Navbar></Navbar>
+                <Navbar {...this.props}></Navbar>
                 {/* We use cloneElement here so we can auto pass down props */}
                 { React.cloneElement(this.props.children, this.props) }
                 <div className="container">

@@ -5,6 +5,7 @@ import rootReducer from './reducers/index';
 import comments from './data/comments';
 import posts from './data/posts';
 
+let page = ''
 let recent = []
 let active = []
 let tranche = {}
@@ -17,6 +18,7 @@ let tranche = {}
  */
 
 const defaultState = {
+    page,
     recent,
     active,
     tranche,

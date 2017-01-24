@@ -3,6 +3,7 @@ import _ from 'underscore';
 import { connect } from 'react-redux';
 
 import * as actionCreators from '../actions/actionCreators';
+import * as actionPage from '../actions/page';
 import * as actionRecent from '../actions/recent';
 import * as actionActive from '../actions/active';
 import * as actionTranche from '../actions/tranche';
@@ -33,6 +34,7 @@ import Main from './Main';
 
 function mapStateToProps(state) {
     return {
+        page: state.page,
         recent: state.recent,
         active: state.active,
         tranche: state.tranche,
@@ -48,7 +50,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(
-        _.extend(actionCreators, actionRecent, actionActive, actionTranche),
+        _.extend(actionCreators, actionPage, actionRecent, actionActive, actionTranche),
         dispatch
     );
 }

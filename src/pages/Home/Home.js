@@ -10,10 +10,14 @@ import TrancheDetail from './TrancheDetail/TrancheDetail';
 
 class Home extends Component {
 
+    componentDidMount() {
+        this.props.setPage('home');
+    }
+
     render() {
         return (
             <div>
-                <HeaderTitle title="Home" menuItem="home" />
+                <HeaderTitle title="Home" />
                 <div className="container">
                     <Row style={ { 'margin-top': '15px' } }>
                         <Col xs={6}>

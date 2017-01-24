@@ -6,6 +6,10 @@ import UsersForm from './UsersForm/UsersForm';
 import UsersList from './UsersList/UsersList';
 
 class Users extends Component {
+    componentDidMount() {
+        this.props.setPage('users');
+    }
+
     render() {
         return (
             <div>

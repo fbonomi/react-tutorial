@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import HeaderTitle from '../../components/HeaderTitle/HeaderTitle';
 
 class Info extends Component {
+    componentDidMount() {
+        this.props.setPage('info');
+    }
+
     render() {
         return (
             <div>

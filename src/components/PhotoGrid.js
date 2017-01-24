@@ -4,6 +4,10 @@ import HeaderTitle from './HeaderTitle/HeaderTitle';
 
 const PhotoGrid = React.createClass({
 
+    componentDidMount() {
+        this.props.setPage('photo_grid');
+    },
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.addItem(this.refs.item.value);

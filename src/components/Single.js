@@ -6,6 +6,10 @@ import HeaderTitle from './HeaderTitle/HeaderTitle';
 
 const Single = React.createClass({
 
+    componentDidMount() {
+        this.props.setPage('photo_grid');
+    },
+
     render() {
         const i = this.props.posts.findIndex((post)=> post.code === this.props.params.postId);
 
