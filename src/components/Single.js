@@ -7,7 +7,7 @@ import HeaderTitle from './HeaderTitle/HeaderTitle';
 const Single = React.createClass({
 
     componentDidMount() {
-        this.props.setPage('photo_grid');
+        this.props.setPage('photo_grid', 'Photo detail');
     },
 
     render() {
@@ -15,7 +15,6 @@ const Single = React.createClass({
 
         return (
             <div>
-                <HeaderTitle title="Photo detail" menuItem="photo_grid" />
                 <div className="single-photo">
                     <Photo key={i} i={i} post={this.props.posts[i]} {...this.props} />
                     <Comments {...this.props} postId={i} />

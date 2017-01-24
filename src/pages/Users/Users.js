@@ -7,13 +7,12 @@ import UsersList from './UsersList/UsersList';
 
 class Users extends Component {
     componentDidMount() {
-        this.props.setPage('users');
+        this.props.setPage('users', 'Users');
     }
 
     render() {
         return (
             <div>
-                <HeaderTitle title="Users" menuItem="users" />
                 <div className="container">
                     <UsersFilter />
                     <UsersForm />

@@ -11,7 +11,7 @@ class HeaderTitle extends Component {
                 <Jumbotron>
                     <div className="container">
                         <img src={logo} className="App-logo" alt="logo" />
-                        <h1 title={this.props.title}>{this.props.title}</h1>
+                        <h1 title={this.props.page.title}>{this.props.page.title}</h1>
                     </div>
                 </Jumbotron>
             </div>

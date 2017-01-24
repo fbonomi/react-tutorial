@@ -16,19 +16,19 @@ class Navigation extends Component {
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav>
-                        <li role="presentation" className={this.props.page === 'home' ? 'active' : ''}>
+                        <li role="presentation" className={this.props.page.menuItem === 'home' ? 'active' : ''}>
                             <Link to={'/'}>Home</Link>
                         </li>
-                        <li role="presentation" className={this.props.page === 'about' ? 'active' : ''}>
+                        <li role="presentation" className={this.props.page.menuItem === 'about' ? 'active' : ''}>
                             <Link to={'about'}>About</Link>
                         </li>
-                        <li role="presentation" className={this.props.page === 'info' ? 'active' : ''}>
+                        <li role="presentation" className={this.props.page.menuItem === 'info' ? 'active' : ''}>
                             <Link to={'info'}>Info</Link>
                         </li>
-                        <li role="presentation" className={this.props.page === 'users' ? 'active' : ''}>
+                        <li role="presentation" className={this.props.page.menuItem === 'users' ? 'active' : ''}>
                             <Link to={'users'}>Users</Link>
                         </li>
-                        <li role="presentation" className={this.props.page === 'photo_grid' ? 'active' : ''}>
+                        <li role="presentation" className={this.props.page.menuItem === 'photo_grid' ? 'active' : ''}>
                             <Link to={'photo_grid'}>Photo grid</Link>
                         </li>
                     </Nav>

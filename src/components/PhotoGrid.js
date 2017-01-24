@@ -5,7 +5,7 @@ import HeaderTitle from './HeaderTitle/HeaderTitle';
 const PhotoGrid = React.createClass({
 
     componentDidMount() {
-        this.props.setPage('photo_grid');
+        this.props.setPage('photo_grid', 'Photo grid');
     },
 
     handleSubmit(e) {
@@ -16,7 +16,6 @@ const PhotoGrid = React.createClass({
     render() {
         return (
             <div>
-                <HeaderTitle title="Photo grid" menuItem="photo_grid" />
                 <div className="photo-grid">
                     {this.props.posts.map((post,i) => <Photo {...this.props} key={i} i={i} post={post} />)}
                 </div>

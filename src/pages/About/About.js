@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import HeaderTitle from '../../components/HeaderTitle/HeaderTitle';
 
 class About extends Component {
     componentDidMount() {
-        this.props.setPage('about');
+        this.props.setPage('about', 'About');
     }
 
     render() {
         return (
             <div>
-                <HeaderTitle title="About" menuItem="about" />
                 <div className="container">
                     <p>Welcome to ABOUT page!!!</p>
                 </div>

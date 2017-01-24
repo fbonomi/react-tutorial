@@ -5,7 +5,10 @@ import rootReducer from './reducers/index';
 import comments from './data/comments';
 import posts from './data/posts';
 
-let page = ''
+let page = {
+    title: '',
+    menuItem: ''
+}
 let recent = []
 let active = []
 let tranche = {}
@@ -18,7 +21,7 @@ let tranche = {}
  */
 
 const defaultState = {
-    page,
+    page: page,
     recent,
     active,
     tranche,
