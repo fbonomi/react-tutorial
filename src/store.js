@@ -17,9 +17,11 @@ const defaultState = {
         title: '',
         menuItem: ''
     },
-    recent: [],
-    active: [],
-    tranche: {},
+    dashboard: {
+        recent: [],
+        active: [],
+        tranche: {},
+    },
     posts,
     comments
 };

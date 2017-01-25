@@ -12,6 +12,7 @@ class Recent extends List {
     }
 
     render() {
+        const { recent, tranche } = this.props.dashboard;
         return (
             <Panel header="Recent">
                 <PanelActions>
@@ -38,11 +39,11 @@ class Recent extends List {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.recent.map((item, index) => {
+                        {recent.map((item, index) => {
                             return (
                                 <tr key={index}
                                     data-trancheID={item.trancheID}
-                                    className={this.props.tranche.trancheID === item.trancheID ? 'selected' : ''}
+                                    className={tranche.trancheID === item.trancheID ? 'selected' : ''}
                                     onClick={this.clickRecord.bind(this, item)}
                                 >
                                     <td>{item.trancheName}</td>

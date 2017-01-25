@@ -35,9 +35,7 @@ import Main from './Main';
 function mapStateToProps(state) {
     return {
         page: state.page,
-        recent: state.recent,
-        active: state.active,
-        tranche: state.tranche,
+        dashboard: state.dashboard,
         posts: state.posts,
         comments: state.comments
     };

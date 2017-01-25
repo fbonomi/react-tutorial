@@ -12,8 +12,9 @@ class Active extends List {
     }
 
     render() {
+        const { active, tranche } = this.props.dashboard;
         return (
-            <Panel header="Recent">
+            <Panel header="Active">
                 <PanelActions>
                     <select className="form-control" onChange={this._changeOption}>
                         {/*this.state.options.map((item, index) => {
@@ -38,11 +39,11 @@ class Active extends List {
                     </tr>
                     </thead>
                     <tbody>
-                    {this.props.active.map((item, index) => {
+                    {active.map((item, index) => {
                         return (
                             <tr key={index}
                                 data-trancheID={item.trancheID}
-                                className={this.props.tranche.trancheID === item.trancheID ? 'selected' : ''}
+                                className={tranche.trancheID === item.trancheID ? 'selected' : ''}
                                 onClick={this.clickRecord.bind(this, item)}
                             >
                                 <td>{item.trancheName}</td>

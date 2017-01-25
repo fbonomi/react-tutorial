@@ -9,18 +9,14 @@ import { combineReducers } from 'redux';
 
 import { routerReducer } from 'react-router-redux'; // we need this for react-router
 import page from './page';
-import recent from './recent';
-import active from './active';
-import tranche from './tranche';
+import dashboard from './dashboard';
 import posts from './posts';
 import comments from './comments';
 
 // Combine all our reducers togeher
 const rootReducer = combineReducers({
     page,
-    recent,
-    active,
-    tranche,
+    dashboard,
     posts,
     comments,
     routing: routerReducer
