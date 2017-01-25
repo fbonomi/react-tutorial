@@ -5,14 +5,6 @@ import rootReducer from './reducers/index';
 import comments from './data/comments';
 import posts from './data/posts';
 
-let page = {
-    title: '',
-    menuItem: ''
-}
-let recent = []
-let active = []
-let tranche = {}
-
 /*
  Store
  Redux apps have a single store which takes
@@ -21,10 +13,13 @@ let tranche = {}
  */
 
 const defaultState = {
-    page: page,
-    recent,
-    active,
-    tranche,
+    page: {
+        title: '',
+        menuItem: ''
+    },
+    recent: [],
+    active: [],
+    tranche: {},
     posts,
     comments
 };

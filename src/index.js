@@ -43,22 +43,25 @@ import store, { history } from './store';
  Rendering
  This is where we hook up the Store with our actual component and the router
  */
-render(
-	<Provider store={store}>
-        { /* Tell the Router to use our enhanced history */ }
-		<Router history={history}>
-			<Route path="/" component={App}>
-				<IndexRoute component={Home} />
-				<Route path="/about" component={About}></Route>
-				<Route path="/info" component={Info}></Route>
-				<Route path="/users" component={Users}></Route>
-				<Route path="/photo_grid" component={PhotoGrid}></Route>
-				<Route path="/view/:postId" component={Single}></Route>
-			</Route>
-			<Route path="/auth" component={Auth}>
-				<Route path="login" component={Login}></Route>
-			</Route>
-		</Router>
-	</Provider>,
-    document.getElementById('root')
-);
+import Navigation from './core/Navigation';
+Navigation.login('urlgi', 1, { userLogin: 'User65', password: 'a', termID: '' }, () => {
+    render(
+		<Provider store={store}>
+            { /* Tell the Router to use our enhanced history */ }
+			<Router history={history}>
+				<Route path="/" component={App}>
+					<IndexRoute component={Home}/>
+					<Route path="/about" component={About}></Route>
+					<Route path="/info" component={Info}></Route>
+					<Route path="/users" component={Users}></Route>
+					<Route path="/photo_grid" component={PhotoGrid}></Route>
+					<Route path="/view/:postId" component={Single}></Route>
+				</Route>
+				<Route path="/auth" component={Auth}>
+					<Route path="login" component={Login}></Route>
+				</Route>
+			</Router>
+		</Provider>,
+        document.getElementById('root')
+    );
+});
