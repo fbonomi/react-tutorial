@@ -5,7 +5,7 @@ import _ from 'underscore';
 class TrancheDetail extends Component {
 
     render() {
-        const { tranche } = this.props.dashboard;
+        const { tranche } = this.props;
         return (
             <div>
                 {! _.isEmpty(tranche) &&

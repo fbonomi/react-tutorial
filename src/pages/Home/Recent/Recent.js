@@ -7,12 +7,12 @@ class Recent extends List {
 
     constructor(props) {
         super(props);
-        this.type = 'Recent';
+        this.type = 'recent';
         this.pcId = 1;
     }
 
     render() {
-        const { recent, tranche } = this.props.dashboard;
+        const { recent, tranche } = this.props;
         return (
             <Panel header="Recent">
                 <PanelActions>
@@ -39,7 +39,7 @@ class Recent extends List {
                         </tr>
                     </thead>
                     <tbody>
-                        {recent.map((item, index) => {
+                        {recent.items.map((item, index) => {
                             return (
                                 <tr key={index}
                                     data-trancheID={item.trancheID}

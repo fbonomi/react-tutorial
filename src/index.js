@@ -13,7 +13,7 @@ import 'babel-polyfill';
 import App from './components/App';
 import Single from './components/Single';
 import PhotoGrid from './components/PhotoGrid';
-import Home from './pages/Home/Home';
+import HomeContainer from './pages/Home/HomeContainer';
 import About from './pages/About/About';
 import Info from './pages/Info/Info';
 import Users from './pages/Users/Users';
@@ -50,7 +50,7 @@ Navigation.login('urlgi', 1, { userLogin: 'User65', password: 'a', termID: '' },
             { /* Tell the Router to use our enhanced history */ }
 			<Router history={history}>
 				<Route path="/" component={App}>
-					<IndexRoute component={Home}/>
+					<IndexRoute component={HomeContainer}/>
 					<Route path="/about" component={About}></Route>
 					<Route path="/info" component={Info}></Route>
 					<Route path="/users" component={Users}></Route>

@@ -2,8 +2,8 @@ import { bindActionCreators } from 'redux';
 import _ from 'underscore';
 import { connect } from 'react-redux';
 
-import * as actionCreators from '../actions/actionCreators';
-import * as actionPage from '../actions/page';
+import * as actionList from '../../actions/dashboard/list';
+import * as actionTranche from '../../actions/dashboard/tranche';
 
 /*
  Components
@@ -11,7 +11,7 @@ import * as actionPage from '../actions/page';
  Everything is in Main - so we import that one
  */
 
-import Main from './Main';
+import Home from './Home';
 
 /*
  Mapping
@@ -31,10 +31,9 @@ import Main from './Main';
 
 function mapStateToProps(state) {
     return {
-        page: state.page,
-        dashboard: state.dashboard,
-        posts: state.posts,
-        comments: state.comments
+        recent: state.dashboard.recent,
+        active: state.dashboard.active,
+        tranche: state.dashboard.tranche,
     };
 }
 
@@ -45,7 +44,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(
-        _.extend(actionCreators, actionPage),
+        _.extend(actionList, actionTranche),
         dispatch
     );
 }
@@ -57,6 +56,6 @@ function mapDispatchToProps(dispatch) {
  We're injecting the data at the top level and passing it down, but you can connect() any component to make the actions and the store available to you.
  */
 
-var App = connect(mapStateToProps, mapDispatchToProps)(Main);
+var HomeContainer = connect(mapStateToProps, mapDispatchToProps)(Home);
 
-export default App;
+export default HomeContainer;

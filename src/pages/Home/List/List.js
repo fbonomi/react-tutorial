@@ -12,9 +12,9 @@ class List extends Component {
         });*/
 
         // Get List
-        this.props['request' + this.type]();
+        this.props.requestList(this.type);
         Navigation.invoke('drlst', this.pcId, {}, (response) => {
-            this.props['receive' + this.type](response.dBDealTrancheList)
+            this.props.receiveList(this.type, response.dBDealTrancheList);
         });
     }
 

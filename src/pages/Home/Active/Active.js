@@ -7,12 +7,12 @@ class Active extends List {
 
     constructor(props) {
         super(props);
-        this.type = 'Active';
+        this.type = 'active';
         this.pcId = 2;
     }
 
     render() {
-        const { active, tranche } = this.props.dashboard;
+        const { active, tranche } = this.props;
         return (
             <Panel header="Active">
                 <PanelActions>
@@ -39,7 +39,7 @@ class Active extends List {
                     </tr>
                     </thead>
                     <tbody>
-                    {active.map((item, index) => {
+                    {active.items.map((item, index) => {
                         return (
                             <tr key={index}
                                 data-trancheID={item.trancheID}

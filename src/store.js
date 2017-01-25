@@ -18,8 +18,16 @@ const defaultState = {
         menuItem: ''
     },
     dashboard: {
-        recent: [],
-        active: [],
+        recent: {
+            offerTypes: [],
+            items: [],
+            filter: {},
+        },
+        active: {
+            offerTypes: [],
+            items: [],
+            filter: {},
+        },
         tranche: {},
     },
     posts,
