@@ -5,6 +5,8 @@ axios.defaults.headers.bbb = 'bbb';
 
 import _ from 'underscore';
 import $ from 'jquery';
+import noty from 'noty';
+import { browserHistory } from 'react-router';
 
 const _parseException = (response) => {
 	switch (response.error_type) {
@@ -14,7 +16,13 @@ const _parseException = (response) => {
 			if(_.has(response,'session_expired') && !_.isUndefined(response.session_expired) && response.session_expired) {
 			//if (response.error_message == 'Session Expired !') {
 				//if (!container || container.showMessagesSystemError()) {
-					alert("Session Expired !");
+                	$.noty.closeAll();
+					noty({
+						text: 'Session Expired!',
+						type: 'error',
+						theme: 'relax',
+					});
+                	browserHistory.push('/auth/login');
 					/*$alert_manager.insert_alert_error({
 						layout: 'topRight',
 						text: 'Session Expired !',
@@ -42,7 +50,7 @@ const _parseException = (response) => {
 		case 'E':
 			//sk_log_error('Error on Invoke remote app service : ' + dstUrl, true, response);
 			if (response.error_class === 'HostResponseException' && response.error_field !== '') {
-				//var text = (response.error_message + ' (' + response.error_code + ') ').replace('{0}', response.error_field);
+				var text = (response.error_message + ' (' + response.error_code + ') ').replace('{0}', response.error_field);
 				//sk_log_debug('Successfully Invoke remote app : ' + dstUrl, true);
 				/*if (!_.isUndefined(callBackFunction) && _.isFunction(callBackFunction)) {
 					try {
@@ -52,10 +60,16 @@ const _parseException = (response) => {
 					}
 				}*/
 			} else {
-				//var text = response.error_message + ' (' + response.error_code + ')';
+				var text = response.error_message + ' (' + response.error_code + ')';
 			}
 			//if (!container || container.showMessagesError()) {
-				//alert(text);
+				$.noty.closeAll();
+				noty({
+					text: text,
+					type: 'error',
+					theme: 'relax',
+				});
+
 				/*$alert_manager.insert_alert_error({
 					layout: 'topRight',
 					text: text,

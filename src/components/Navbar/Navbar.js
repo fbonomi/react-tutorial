@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import { Navbar, Nav } from 'react-bootstrap';
-import './Navbar.css';
 import { Link } from 'react-router';
 
-// <Link to="/about"></Link>
+import './Navbar.css';
 
 class Navigation extends Component {
+    handleLogout() {
+        // TODO - gestire distruzione cookie
+        browserHistory.push('/auth/login');
+    }
+
     render() {
         return (
             <div>
@@ -34,7 +39,7 @@ class Navigation extends Component {
                     </Nav>
                     <Nav pullRight>
                         <li role="presentation">
-                            <Link to={'/auth/login'}>
+                            <Link to="javascript:void(0)" onClick={this.handleLogout}>
                                 <span className="glyphicon glyphicon-log-out" aria-hidden="true"></span>
                                 {'  '}
                                 Logout
